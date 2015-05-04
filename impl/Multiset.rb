@@ -14,10 +14,15 @@ class Multiset
   end
 
   def add(n)
-    @set << n if not(self.contains(n))
+    @set.push n
   end
 
   def remove(n)
-    @set.delete n
+    @set.each_with_index do |item, index|
+      if item == n
+        @set.delete_at index
+        break
+      end
+    end
   end
 end
