@@ -12,4 +12,12 @@ class Multiset
 
     return result
   end
+
+  def add(n)
+    @set << n if not(self.contains(n))
+  end
+
+  def remove(n)
+    @set.delete n
+  end
 end
